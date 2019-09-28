@@ -3,7 +3,7 @@ import Templater from '../../src/Templater.js';
 export class ViewProduct {
   constructor(contr) {
     this.controller = contr;
-    this.templater = new Templater('../components/Product/Product.html');
+    this.templater = new Templater('./components/Product/Product.html');
     this.output = document.querySelector('#products');
   }
 
