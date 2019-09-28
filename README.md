@@ -1,1 +1,1 @@
-### https://sergei034.github.io/myPets/
+### https://sergey034.github.io/myPets
