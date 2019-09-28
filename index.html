@@ -13,13 +13,12 @@
 </head>
 
 <body>
+
   <!-- Navigation Menu -->
-
-
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-5">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
     <div class="container">
 
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="">
         <span class="logo-icon">
           <i class="fas fa-paw fa-2x"></i><span class="text-primary font-italic"> my</span>Pets
         </span>
@@ -33,73 +32,129 @@
         <ul class="navbar-nav m-auto text-center">
           <li class="nav-item">
             <!-- <a class="nav-link" href="#">All</a> -->
-            <button class="nav-link btn btn-outline-dark px-3" id="all-btn">
+            <button class="nav-link btn px-3" id="all-btn">
               <i class="fas fa-home fa-2x"></i>
             </button>
           </li>
           <li class="nav-item">
-            <!-- <a class="nav-link" href="#">Dogs</a> -->
-            <button class="nav-link btn btn-outline-dark px-3" id="dogs-btn">
-              <i class="fas fa-dog fa-2x"></i>
-            </button>
-          </li>
-          <li class="nav-item">
             <!-- <a class="nav-link" href="#">Cats</a> -->
-            <button class="nav-link btn btn-outline-dark px-3" id="cats-btn fas">
+            <button class="nav-link btn px-3" id="cats-btn fas">
               <i class="fas fa-cat fa-2x"></i>
             </button>
           </li>
           <li class="nav-item">
-            <!-- <a class="nav-link" href="#">Birds</a> -->
-            <button class="nav-link btn btn-outline-dark px-3" id="birds-btn">
-              <i class="fas fa-crow fa-2x"></i>
+            <!-- <a class="nav-link" href="#">Dogs</a> -->
+            <button class="nav-link btn px-3" id="dogs-btn">
+              <i class="fas fa-dog fa-2x"></i>
             </button>
           </li>
           <li class="nav-item">
             <!-- <a class="nav-link" href="#">Fishes</a> -->
-            <button class="nav-link btn btn-outline-dark px-3" id="fishes-btn">
+            <button class="nav-link btn px-3" id="fishes-btn">
               <i class="fas fa-fish fa-2x"></i>
             </button>
           </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link" href="#">Birds</a> -->
+            <button class="nav-link btn px-3" id="birds-btn">
+              <i class="fas fa-crow fa-2x"></i>
+            </button>
+          </li>
         </ul>
-        <!-- Render search field component here -->
-        <form class="form-inline my-2 my-lg-0 justify-content-center">
-          <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i class="fas fa-search "></i></button>
-        </form>
+
+        <!-- Shopping cart button -->
+        <button class="nav-link btn px-3" id="cart-btn">
+          <i class="icon-light fas fa-shopping-cart fa-2x fa-inverse"></i>
+          <span id="cart-number" class="badge badge-danger ml-0">0</span>
+        </button>
 
       </div>
 
     </div>
-
   </nav>
 
-
-
-  <!-- 
-  <nav class="navbar mb-5">
-    <div class="container"> -->
-  <!-- navbar here -->
-  <!-- <span class="logo-icon">
-        <i class="fas fa-paw"></i>myPets
-      </span>
-      <div class="card-btn">
-        <span class="nav-icon"> -->
-  <!-- cart icon here from fort awesome -->
-  <!-- </span>
-      </div>
+  <nav class="navbar navbar-expand-md mt-2 mb-4">
+    <div class="container">
+      <!-- Render search field component here -->
+      <form class="form-inline my-2 my-lg-0 justify-content-center w-100">
+        <input class="form-control mr-sm-2 w-75" type="search" aria-label="Search">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-search "></i></button>
+      </form>
     </div>
-  </nav> -->
+  </nav>
 
+  <!-- Results (Pets rendering) -->
   <div class="container" id="main-container">
+    <div class="row">
+      <!-- Sidebar (Search & Filters) -->
+      <div id="sidebar" class="col-md-12 col-lg-3">
+        <div class="container">
 
-    <!-- Results (Pets rendering) -->
-    <!-- <div id="results"> -->
-    <!-- show all the pets here -->
+          <!-- Filters -->
+          <h5 class="mb-3 text-center">Filters</h5>
+          <form class="d-flex flex-column form-inline my-2 my-lg-0 justify-content-center">
 
-    <div class="row" id="products"></div>
+            <div class="form-group">
+              <label for="formControlRange">Price</label>
+              <input type="range" class="custom-range" min="0" max="6000" step="1" id="formControlRange">
+            </div>
 
+            <div class="form-group">
+              <label for="formControlRange">Qtity</label>
+              <input type="range" class="custom-range" min="0" max="50" step="1" id="formControlRange">
+            </div>
+
+            <h5 class="mt-4">Additional filters</h5>
+
+            <h6>Property choise 1</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Some property 1
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Some property 2
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Some property 3
+              </label>
+            </div>
+
+            <h6 class="mt-2">Property choise 2</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Some property 1
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Some property 2
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Some property 3
+              </label>
+            </div>
+
+          </form>
+        </div>
+      </div>
+      <!-- Results (Pets rendering) -->
+      <div id="products" class="row col-sm-12 col-lg-9 text-center justify-content-center"></div>
+
+    </div>
   </div>
+
 
   <!-- Footer -->
   <footer id="main-footer" class="text-white text-center bg-dark py-3 footer ">
@@ -107,6 +162,8 @@
       <i class="fas fa-paw"></i><span class="text-primary font-italic"> my</span>Pets &copy; 2019
     </div>
   </footer>
+
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
