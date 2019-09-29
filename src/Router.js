@@ -1,8 +1,6 @@
 
 import ControllerProduct from '../components/Product/ControllerProduct.js';
 import ControllerCategory from '../components/Category/ControllerCategory.js';
-import ControllerSearch from '../components/Search/ControllerSearch.js';
-import ControllerSort from '../components/Sort/ControllerSort.js';
 
 export default class Router {
   constructor() {
