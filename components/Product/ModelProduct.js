@@ -9,12 +9,21 @@ export class ModelProduct {
     // return localStorage.getItem('products');
   }
 
-  getProducts() {
+  getProducts(category = '') {
     fetch('./data/goods.json')
       .then(data => data.json())
       .then(data => {
         localStorage.setItem('products', JSON.stringify(data));
         this.productsArr = JSON.parse(localStorage.getItem('products'));
+
+        if (category) {
+          this.productsArr = this.productsArr.filter(prod => {
+            if (prod.type === category) {
+              return prod;
+            }
+          });
+        }
+
         return this.productsArr;
       })
       .then(prodArr => this.controller.sendProductsToRender(prodArr));
