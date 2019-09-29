@@ -6,12 +6,13 @@ export class ModelCategory {
   getCategory(e) {
     const category = e.target.parentNode.id;
 
-    if (category === 'all') {
-      console.log('all');
-      // run ControllerProduct.this.model.getProducts(); via router
-    } else {
-      console.log(category);
-      // run ControllerProduct.this.model.getProducts(category); via router
-    }
+    this.controller.router.serviceProduct.getProducts()
+      .then(data => {
+        if (category === 'all') {
+          this.controller.sendProductsToRender(data);
+        } else {
+          this.controller.sendProductsToRender(data.filter(el => el.type === category));
+        }
+      });
   }
 }
